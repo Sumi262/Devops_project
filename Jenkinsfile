@@ -17,8 +17,7 @@ pipeline {
         stage('Build Docker image'){
           
             steps {
-                echo "Hello GUVI GEEK"
-                sh 'ls'
+                
                 sh 'docker build -t  docker push sumithra262/springboot_img:${BUILD_NUMBER} .'
             }
         }
@@ -32,7 +31,7 @@ pipeline {
         }
         stage('Docker Push'){
             steps {
-                sh 'docker push docker push sumithra262/springboot_img:${BUILD_NUMBER}'
+                sh 'docker push sumithra262/springboot_img:${BUILD_NUMBER}'
             }
         }
         stage('Docker deploy'){
